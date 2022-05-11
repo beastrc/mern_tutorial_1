@@ -1,0 +1,613 @@
+/* breadcrumb, move-to-top, buttons, error messages, alerts , pagination... */
+
+/*------- pagination (react-js-pagination) css below ----*/
+.pagination {
+    float: right;
+    margin: 0 0 15px 0;
+    > {
+        li > {
+            a,
+            span {
+                position: relative;
+                float: left;
+                padding: 6px 12px;
+                margin: 0 10px;
+                line-height: 1.42857143;
+                font-size: 13px;
+                color: #666666;
+                text-decoration: none;
+                background-color: transparent;
+                border: 0;
+                cursor: pointer;
+            }
+        }
+        .active > {
+            a {
+                background-color: #4a90e2;
+                border-color: #4a90e2;
+                &:focus,
+                &:hover {
+                    background-color: #4a90e2;
+                    border-color: #4a90e2;
+                }
+            }
+            span {
+                background-color: #4a90e2;
+                border-color: #4a90e2;
+                &:focus,
+                &:hover {
+                    background-color: #4a90e2;
+                    border-color: #4a90e2;
+                }
+            }
+        }
+        .disabled > {
+            a {
+                background-color: transparent;
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            span {
+                background-color: transparent;
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+        li {
+            &:first-child > {
+                a,
+                span {
+                    display: none;
+                }
+            }
+            &:last-child > {
+                a,
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+/*--------------- breadcrumb css below --------------*/
+.breadcrumb {
+    padding: 0;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+    display: inline-block;
+    li {
+        @include fonts(
+            $family: $font3,
+            $size: 18px,
+            $colour: $clr-secondary,
+            $weight: normal,
+            $txt-trans: uppercase,
+            $ls: false,
+            $lh: false
+        );
+        margin: 0;
+        line-height: 1;
+        & + li:before {
+            padding: 0 5px;
+            color: #3270b2;
+            content: '\007c';
+        }
+        @include media($max: 479px) {
+            font-size: 16px;
+        }
+    }
+    p {
+        @include fonts($size: 14px, $colour: $clr-di, $txt-trans: capitalize);
+        margin: 5px 0 0 0;
+        @include media($max: 479px) {
+            font-size: 12px;
+        }
+    }
+}
+
+/*--------------- Move to top css below --------------*/
+.move-to-top {
+    background-color: $clr-secondary;
+    display: block;
+    position: fixed;
+    z-index: 99;
+    bottom: 100px;
+    right: 20px;
+    display: none;
+    font-size: 20px;
+    padding: 15px 0;
+    color: $clr-primary;
+    width: 50px;
+    text-align: center;
+    line-height: 1;
+    &:hover,
+    &:focus {
+        color: $clr-primary;
+    }
+    @include media($max: 767px) {
+        bottom: 50px;
+    }
+}
+
+/*---------------- Move to top Ends ----------------*/
+/*-------- Buttons css below ----------------------*/
+
+.btn {
+    font-size: 12px;
+    font-family: $font3;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 100%;
+    height: 40px;
+    &:not(:first-child) {
+        margin-left: 10px;
+    }
+    @include media($min: 640px) {
+        min-height: 40px;
+        min-width: 100px;
+    }
+}
+/* ----- btn-white ------ */
+.btn-default {
+    @include button-style(
+        $bg-color: $clr-primary,
+        $border: 1px solid $clr-secondary
+    );
+    color: $clr-secondary;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active,
+    &:active:focus {
+        @include button-style(
+            $bg-color: $clr-primary,
+            $border: 1px solid $clr-secondary
+        );
+        color: $clr-secondary !important;
+    }
+}
+/* ----- btn-blue ------ */
+.btn-primary {
+    @include button-style(
+        $bg-color: $clr-secondary,
+        $border: 1px solid $clr-secondary
+    );
+    color: $clr-primary;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active,
+    &:active:focus {
+        @include button-style(
+            $bg-color: $clr-secondary,
+            $border: 1px solid $clr-secondary
+        );
+        color: $clr-primary;
+    }
+}
+/* ----- btn-grey ------ */
+.btn-grey {
+    @include button-style($bg-color: #a6a6a6, $border: 1px solid #a6a6a6);
+    color: $clr-primary;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active,
+    &:active:focus {
+        @include button-style($bg-color: #a6a6a6, $border: 1px solid #a6a6a6);
+        color: $clr-primary !important;
+    }
+}
+// disabled grey btn
+.btn-grey-disabled {
+    @extend .btn-grey;
+    color: #d8d8d8;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active,
+    &:active:focus {
+        color: #d8d8d8 !important;
+    }
+}
+
+/* ----- red button ----- */
+.seized-btn {
+    background-color: #c83f31 !important;
+    border: 1px solid #c83f31 !important;
+}
+
+// green btn -----------------------
+.btn-saved,
+.btn-saved:hover,
+.btn-saved:focus,
+.btn-saved.active {
+    background-color: #92d050;
+    border: 1px solid #92d050;
+}
+// green dull-blue -----------------------
+.btn-applied,
+.btn-applied:hover,
+.btn-applied:focus,
+.btn-applied.active {
+    background-color: #8faadc;
+    border: 1px solid #8faadc;
+}
+// done / complete / posted button-----------
+.btn-done,
+.btn-done:hover,
+.btn-done:focus,
+.btn-done.active {
+    background-color: #a6a6a6;
+    color: $clr-primary;
+}
+// cancel / red / negative btn --------------
+.btn-negative,
+.btn-negative:hover,
+.btn-negative:focus,
+.btn-negative.active {
+    font-family: 'open_sansregular';
+    background-color: transparent;
+    color: #d0021b !important;
+    font-size: 16px;
+    border: none;
+    text-align: left;
+    text-transform: capitalize;
+}
+// yellow-white / unposted
+.btn-unposted,
+.btn-unposted:hover,
+.btn-unposted:focus,
+.btn-unposted.active {
+    background-color: #fac002;
+    border: 1px solid #fac002;
+}
+.btn-no {
+    font-family: 'open_sansregular';
+    border: 0;
+    background-color: transparent;
+    color: #333333;
+    font-size: 16px;
+    text-transform: capitalize;
+    &:hover,
+    &:focus,
+    &.active,
+    &:active,
+    &:active:focus {
+        font-family: 'open_sansregular';
+        border: 0;
+        background-color: transparent;
+        color: #333333 !important;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+}
+// logging-in buttons -----------------------------
+.sign-in-btn,
+.sign-up-btn,
+.reset-link-btn {
+    @include fonts($family: false, $size: 16px, $colour: $clr-primary);
+    @include button-style(
+        $height: 43px,
+        $bg-color: $clr-secondary,
+        $txt-align: center
+    );
+    @include prefix('border-radius', 0);
+    min-width: 110px;
+    margin: 40px auto;
+    display: block;
+}
+.sign-in-btn {
+    &:hover,
+    &:focus,
+    &.active {
+        @include fonts($family: false, $size: 16px, $colour: $clr-primary);
+        @include button-style($bg-color: $clr-secondary);
+    }
+}
+.sign-up-btn {
+    &:hover,
+    &:focus,
+    &.active {
+        @include fonts($family: false, $size: 16px, $colour: $clr-primary);
+        @include button-style($bg-color: $clr-secondary);
+    }
+}
+.reset-link-btn {
+    &:hover,
+    &:focus,
+    &.active {
+        @include fonts($family: false, $size: 16px, $colour: $clr-primary);
+        @include button-style($bg-color: $clr-secondary);
+    }
+}
+// landing page header buttons --------------------
+.transy-btn {
+    @include fonts(
+        $family: $font3,
+        $size: 14px,
+        $colour: $clr-primary,
+        $lh: 1.56,
+        $txt-trans: uppercase
+    );
+    @include button-style(
+        $width: 118px,
+        $height: 40px,
+        $bg-color: transparent,
+        $border: solid 1px $clr-nonary
+    );
+    outline: none;
+    &.yellow-bg {
+        @include fonts($family: $font3, $colour: $clr-quinary);
+        @include button-style($bg-color: $clr-nonary);
+    }
+}
+.yellow-btn {
+    @include fonts(
+        $family: $font3,
+        $size: 14px,
+        $colour: $clr-quinary,
+        $lh: 1.56,
+        $txt-trans: uppercase
+    );
+    @include button-style(
+        $width: auto,
+        $bg-color: $clr-nonary,
+        $border: 0,
+        $txt-align: center
+    );
+    outline: none;
+    max-width: 100%;
+    min-height: 40px;
+    &:hover,
+    &:focus,
+    &.active {
+        @include fonts(
+            $family: $font3,
+            $size: 14px,
+            $colour: $clr-quinary !important,
+            $lh: 1.56,
+            $txt-trans: uppercase
+        );
+        @include button-style(
+            $width: auto,
+            $height: 40px,
+            $bg-color: $clr-nonary,
+            $border: 0,
+            $txt-align: center
+        );
+    }
+}
+
+.contact-us-btn {
+    @extend .transy-btn;
+    @include fonts($size: 22px, $colour: black);
+    @include button-style($width: 190px, $height: 60px);
+}
+
+.change-password-card .btns {
+    text-align: center;
+    button {
+        height: 43px;
+        min-width: 110px;
+        margin: 5px;
+        outline: none;
+    }
+    .btn-blue {
+        background-color: $clr-secondary;
+    }
+    .btn-grey {
+        color: $clr-senary;
+        background-color: $clr-decenary;
+    }
+}
+// buttons on on-boarding screens --------------------
+.card .btn {
+    @include fonts($family: $font3, $size: 16px, $colour: $clr-primary);
+    @include button-style(
+        $bg-color: $clr-secondary,
+        $height: 43px,
+        $txt-align: center
+    );
+    margin: 40px 0;
+}
+.thank-you-card.card .btn {
+    width: 220px;
+}
+.btn.previouse-btn {
+    @include fonts(
+        $family: $font3,
+        $size: 16px,
+        $colour: $clr-secondary,
+        $txt-trans: capitalize
+    );
+    @include button-style($txt-align: left, $bg-color: transparent);
+    padding: 10px 24px;
+    background-image: url(/images/arrow-left@2x.png);
+    background-repeat: no-repeat;
+    background-position: 1px;
+}
+.nxt-btn {
+    @include fonts($family: $font3, $size: 16px, $txt-trans: capitalize);
+    @include button-style($height: 46px, $txt-align: center);
+    padding: 10px 30px;
+    min-width: 100px;
+    margin-bottom: 10px;
+    @include media(2px, 580px) {
+        padding: 10px 20px;
+        min-width: 90px;
+    }
+}
+.btn {
+    &:hover,
+    &:focus {
+        color: $clr-primary;
+    }
+}
+.previouse-btn {
+    &:hover,
+    &:focus {
+        color: $clr-secondary;
+    }
+}
+.mobile-post-job-btn,
+.mobile-find-job-btn {
+    @include fonts($family: $font3, $size: 10px);
+    @include button-style($width: 65px, $height: 30px);
+    margin-top: 0 5px 0 0;
+}
+
+.edit-profile-btn {
+    @include fonts($family: $font3, $size: 12px, $colour: $clr-tertiary);
+    @include button-style(
+        $width: 168px,
+        $height: 45px,
+        $border: solid 1px rgba(50, 112, 178, 0.3)
+    );
+    background-color: transparent;
+    &:hover,
+    &:focus {
+        color: $clr-tertiary;
+    }
+    @include media($max: 479px) {
+        max-width: 130px;
+    }
+    a {
+        color: $clr-tertiary;
+    }
+}
+
+/*------------------- add more button ------------*/
+a {
+    &.add-more {
+        @include fonts($family: false, $size: 16px, $colour: $clr-tertiary);
+        @include button-style($width: 136px);
+        padding: 0 15px;
+        float: left;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+    &.delete-more {
+        @include fonts($family: false, $size: 16px, $colour: $clr-tertiary);
+        padding: 0 15px;
+        float: left;
+        cursor: pointer;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        text-align: left;
+    }
+    &.add-more > img,
+    &.delete-more > img {
+        max-height: 22px;
+        padding-right: 10px;
+        margin: 0 0 3px 0;
+        cursor: pointer;
+    }
+}
+
+/*-------- BUTTONS above -------------*/
+/*--------- ALERTS below -------------*/
+.ie-alert {
+    position: fixed !important;
+    bottom: 0 !important;
+    margin: 0;
+    left: 0;
+    width: 100%;
+    border: 0;
+    text-align: center;
+    font-size: 14px;
+    z-index: 15;
+    padding: 15px;
+    .text-center {
+        float: left;
+        width: 95%;
+    }
+    .close-alert {
+        color: $clr-tertiary;
+        font-size: 20px;
+        line-height: 20px;
+        cursor: pointer;
+        float: right;
+        margin-top: 4px;
+        margin-right: 10px;
+    }
+    span i {
+        font-size: 25px;
+        color: #3c763d;
+        padding: 0 10px;
+    }
+}
+.fixed-alert {
+    position: fixed !important;
+    top: 75px !important;
+    &.top-0 {
+        top: 0 !important;
+    }
+}
+.fixed-alert-nxt {
+    left: 20% !important;
+    width: 79% !important;
+}
+.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 0;
+    text-align: center;
+    font-size: 16px;
+    z-index: 1060;
+    &.alert-danger {
+        color: #a94442;
+    }
+    &.alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+}
+
+#legably_flash_msg {
+    .close-alert {
+        position: absolute;
+        bottom: 14px;
+        right: 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+/*--------- ALERTS above -----------*/
+/*--------- Errors below -----------*/
+
+.home-page-wrapper .banner p.error {
+    width: 40%;
+    margin: 0 auto;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    span {
+        color: #e53935;
+        text-align: left !important;
+        display: block !important;
+    }
+}
+
+/*--------- Errors above -----------*/
+
+@media only screen and (max-width: 767px) {
+    .nxt-prev-btns {
+        padding: 0 15px;
+    }
+    .btn-primary {
+        margin-bottom: 10px;
+    }
+}

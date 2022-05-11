@@ -1,0 +1,830 @@
+// accordian, propeller range slider, DateTimePicker, tabbed-radio-buttons,
+
+/*--------------------- accordian section below-------------------*/
+section.range-accordian{
+  background-color: $clr-mono;
+  margin: 0 -55px;
+  padding: 20px 55px 30px;
+}
+section.range-accordian h4{
+  font-size: 14px;
+  text-align: left;
+  color: $clr-tertiary;
+}
+section.range-accordian .location{
+  font-size: 13px;
+  color: $clr-quinary;
+}
+section.range-accordian .location a{
+  font-size: 13px;
+  color: $clr-quinary;
+  border-bottom: 1px dotted;
+  margin: 0 0 0 5px;
+}
+
+/*------------------- propeller range css below ( range with single value )------------------------*/
+
+.pmd-range-slider {
+  background: $clr-secondary;
+  min-width: 35%;
+  height: 2px;
+  margin: 0 0 4px 0;
+  display: inline-block;
+}
+.work-permanent .pmd-range-slider , .work-contract .pmd-range-slider{ min-width: 28%; }
+.pmd-range-slider.noUi-connect{  background: $clr-secondary; }
+.pmd-range-slider.noUi-target{ margin: 0 0 4px 0; }
+.pmd-range-slider .noUi-handle{ outline: none; }
+.pmd-range-slider .noUi-handle::before{
+  background: $clr-primary;
+  border: 3px solid $clr-secondary;
+  left: 4px;
+}
+.pmd-textfield input.form-control {
+  width: 105px;
+  height: 40px;
+  border-radius: 7px;
+  border: solid 1px $clr-quaternary;
+  padding: 5px 15px;
+  display: inline-block;
+  border-radius: 0;
+}
+.pmd-textfield input.form-control:focus{ border: solid 1px $clr-quaternary !important; }
+.pmd-textfield-focused{ background-color: transparent; }
+.card .form-group.pmd-textfield.pmd-textfield-floating-label-completed{
+  margin: 0 0 0 20px;
+  display: inline-block;
+  position: relative;
+  outline: none;
+}
+.pmd-range-slider .noUi-tooltip{ background-color: $clr-secondary; width: 60px !important; }
+.pmd-range-slider.noUi-horizontal .noUi-handle-upper .noUi-tooltip::before,
+.pmd-range-slider.noUi-horizontal .noUi-handle-lower .noUi-tooltip::before{ background-color: $clr-secondary; }
+.permanent-slidder-wrapper>.range-value, .contract-slidder-wrapper>.range-value{
+  display: inline-block;
+  width: 92px;
+  max-height: 40px;
+  border: solid 1px $clr-quaternary;
+  padding: 5px 0;
+  margin: 0 20px 0 0;
+  border-radius: 0;
+  text-align: center;
+}
+.permanent-slidder-wrapper>.range-value:last-child, .contract-slidder-wrapper>.range-value:last-child{
+  margin: 0 0 0 20px;
+}
+.permanent-slidder-wrapper .pmd-range-slider .noUi-connect{
+  background: $clr-secondary;
+}
+.contract-slidder-wrapper .pmd-range-slider .noUi-connect{
+  background: $clr-secondary;
+}
+/*------------------- propeller range css below ( range with double value )------------------------*/
+
+section.hourly-rate-accordian >.pmd-range-slider.noUi-background{
+  width: 35%;
+  min-width: 150px;
+  margin: 30px 0 20px;
+}
+section.hourly-rate-accordian > div.hourly-rate-values{
+  width: 35%;
+  min-width: 150px;
+  margin: 0;
+}
+section.hourly-rate-accordian .hourly-rate-values > .range-value{
+  display: inline-block;
+  border: solid 1px $clr-quaternary;
+  padding: 5px 20px;
+}
+section.hourly-rate-accordian .noUi-connect {
+  background: $clr-secondary;
+}
+section.hourly-rate-accordian .pmd-range-slider .noUi-handle.noUi-handle-lower::before{ left:-4px; }
+
+.rw-multiselect-wrapper>.rw-input{ border: 0 !important; }
+ul.rw-list>li.rw-list-option.rw-state-focus, .rw-selectlist>li.rw-list-option.rw-state-focus{ border:0; }
+
+
+/*Datepicker*/
+.datepicker input { padding-right: 46px; }
+.datepicker input + i {
+  position: absolute;
+  top: 38px;
+  right: 16px;
+  color: $clr-quaternary;
+  border-left: 1px solid $clr-quaternary;
+  padding: 3px 12px;
+}
+/*Datepicker Ends*/
+// rtd dateTimePicker ------------------
+.rdt input{
+  background: url('/images/svg-images/Calendar.svg') 96% center;
+  background-repeat: no-repeat;
+}
+.rdt + span.clear{
+  background: url('/images/svg-images/close-black.svg') 95% center;
+  background-repeat: no-repeat;
+  height: 12px;
+  width: 12px;
+  opacity: 0.3;
+  position: absolute;
+  top: 47px;
+  right: 70px;
+  cursor: pointer;
+  @include media($min: 1640px) {
+    right: 80px;
+  }
+  @include media($min: 641px, $max: 767px) {
+    right: 80px;
+  }
+  @include media($max: 640px) {
+    right: 68px;
+  }
+}
+.payment-details .rdt + span.clear{
+  top: 16px;
+  right: 68px;
+  @include media($min: 881px, $max: 992px) {
+    right: 45px;
+  }
+  @include media($min: 768px, $max: 880px) {
+    right: 45px;
+  }
+  @include media($min: 641px, $max: 767px) {
+    top: 37px;
+    right: 80px;
+  }
+  @include media($max: 640px) {
+    top: 37px;
+    right: 68px;
+  }
+}
+.rdtOpen .rdtPicker {
+  left: 15px;
+  width: 225px;
+}
+.rdt + .fa.fa-calendar{
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  color: $clr-quaternary;
+  border-left: 1px solid $clr-quaternary;
+  padding: 3px 9px;
+  width: 20px;
+  height: 20px;
+}
+
+/*Tabbed Radio Btns*/
+.tabbed-radio-btns {
+  display: flex;
+  display: -webkit-flex;
+  /*flex-wrap: wrap;*/
+  margin: 0;
+  padding: 0;
+}
+.tabbed-radio-btns + .tabbed-radio-btns { margin-top: 10px; }
+.posting-two-cols .tabbed-radio-btns { margin-top: 0; display: inline-block; vertical-align: top;}
+.tabbed-radio-btns.three-tabs{ margin-top: 0;display: inline-block;vertical-align: top; }
+.posting-two-cols.hours-col .tabbed-radio-btns { margin-top:0; }
+.tabbed-radio-btns+.tabbed-radio-btns { margin-top: 10px; }
+.tabbed-radio-btns li { position: relative; display: inline-block; }
+
+.tabbed-radio-btns li input {
+  height: 100%;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+.tabbed-radio-btns li input:focus { border: none !important; }
+.tabbed-radio-btns li span {
+  display: block;
+  line-height: 1;
+  background: $clr-decenary;
+  border: solid 1px $clr-quaternary;
+  color: $clr-senary;
+  font-size: 14px;
+  text-align: center;
+  min-width: 150px;
+  padding: 12px 10px;
+  height: 45px;
+}
+.tabbed-radio-btns li input:checked + span {
+  background: $clr-secondary;
+  border-color: $clr-secondary;
+  color: $clr-primary;
+}
+
+/*-----------------------------.Select--multi ------------------------------------------------*/
+
+.Select, .Select div, .Select input, .Select span{}
+.Select-multi-value-wrapper .Select-placeholder{ padding: 5px 20px; }
+.Select--multi .Select-multi-value-wrapper, .Select-arrow{
+  padding: 5px 20px !important;
+  @include media($min: 768px, $max: 840px) {
+    padding: 9px 12px !important;
+  }
+}
+.Select-multi-value-wrapper{
+  // max-height: 58px;
+  height: 45px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 100%;
+  /*padding: 1px 5px;*/
+}
+.Select--multi .Select-clear-zone{ display: none !important; }
+.Select--multi .Select-arrow-zone{ display: none !important; }
+.Select--multi .Select-input input, .Select--multi.has-value .Select-input input{ height: 34px; }
+
+.pmd-range-slider .noUi-base {
+  z-index: 90;
+}
+.upload-document p {
+  margin-bottom: 0;
+  padding: 0;
+  padding-bottom: 5px;
+}
+.Select--multi .Select-input input{
+  border: none !important;
+  padding: 0;
+}
+.Select--multi.has-value .Select-input input {
+  margin-left: 5px;
+}
+.Select-value {
+  background: $clr-secondary !important;
+  color: $clr-primary !important;
+  border: none !important;
+}
+.gateway-page{
+  background-color: $clr-mono;
+}
+.card .group-radio .radio-label{
+  font-size: 14px;
+  font-family: 'open_sanssemibold';
+  letter-spacing: 1px;
+  color: $clr-tertiary;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.list {
+  flex: 0 80%;
+}
+.list__item {
+  position: relative;
+}
+.radio-list > .list__item{
+  display: inline-block;
+  margin: 10px 40px 10px 0;
+}
+.radio-btn {
+  position: absolute;
+  visibility: hidden;
+}
+.radio-btn ~ .label{
+  font-family: 'open_sansregular';
+  font-size: 15px;
+  color: $clr-tertiary;
+  text-transform: capitalize;
+  display: flex;
+}
+.radio-btn ~ .label::before { display: inline-block; }
+.radio-btn:checked ~ .label::before {
+  border: 2px solid $clr-secondary;
+  background: $clr-primary;
+}
+.radio-btn:checked ~ .label::after{
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: $clr-secondary;
+  border-radius: 50%;
+  left: 4px;
+  top: 4px;
+}
+.label {
+  display: flex;
+  align-items: center;
+  padding: 25px 0 25px 20px;
+  color: #f8f7ff;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+.label::before {
+  display: block;
+  content: '';
+  border: 2px solid $clr-secondary;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  margin-right: 10px;
+  transition: all 0.25s linear;
+}
+.present{
+  font-size: 12px;
+  font-family: 'open_sanssemibold';
+  letter-spacing: 1px;
+  color: $clr-tertiary;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: normal;
+}
+.clr{ color:#e53935; }
+
+
+/* ---------------- pmd select css below-------------------- */
+
+.select2-container--bootstrap{ display: inline-block; text-align: left; min-width: 100%; }
+.select2-container--bootstrap .select2-selection--single{
+  max-width: 100%;
+  height: 40px;
+  font-size: 13px;
+  color: $clr-quinary;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px 20px;
+  border: solid 1px $clr-quaternary;
+}
+.select2-container--bootstrap .select2-selection--single:hover,
+.select2-container--bootstrap .select2-selection--single:focus,
+.select2-container--bootstrap .select2-selection--single:active{
+  border: solid 1px $clr-secondary !important;
+}
+.select2-container--bootstrap .select2-results > .select2-results__options{ overflow: hidden; }
+.select2-results__option{
+  border-bottom: 1px solid $clr-quaternary;
+  margin: 0 5px;
+}
+.select2-results__option:first-child{
+  margin: 0;
+  padding: 6px 11px;
+}
+.select2-results__option:hover{ margin: 0 -4px; padding: 6px 15px; }
+.select2-container--bootstrap .select2-selection--single .select2-selection__arrow{
+  background: url(/images/arrow-down.png) no-repeat center center;
+  width: 25px;
+  transform: rotate(0deg);
+  transition: transform 0s linear;
+  border-left: 1px solid $clr-quaternary;
+  border-right: 0;
+  margin: 10px 0;
+}
+.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b{ border: 0; }
+.select2-container--bootstrap.select2-container--open .select2-selection .select2-selection__arrow{
+  transform: rotate(180deg);
+  transition: transform 0s linear;
+  border-right: 1px solid $clr-quaternary;
+  border-left: 0;
+}
+.select2-container.select2-container--bootstrap.select2-container--open{ z-index: 10; }
+
+/*------------- pmd select css above ---------------------*/
+/*------------- pmd radio btn css below -----------------------*/
+
+.card .radio-inline.pmd-radio { padding-left: 0; }
+.card input[type=number]::-webkit-inner-spin-button,
+.card input[type=number]::-webkit-outer-spin-button  {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.card .group-radio{
+  font-size: 14px;
+  text-align: left;
+  color: $clr-tertiary;
+}
+.practice-area-card.card .group-radio{
+  padding: 34px 15px 0;
+  font-size: 14px;
+  text-align: left;
+  color: $clr-tertiary;
+}
+.group-radio label span{ font-weight: normal; }
+.pmd-radio>span.pmd-radio-label { margin-right: 5px; }
+.practice-area-card.card .group-radio > label.pmd-radio > span{
+  font-size: 14px;
+  text-align: left;
+  color: $clr-tertiary;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.practice-area-card.card label{ margin: 0 0 5px; }
+.practice-area-card.card label:last-child{ margin: 0 0 5px 5px; }
+.practice-area-card.card label > span.pmd-radio-label{ margin: 4px 0 0 0; }
+.card .pmd-radio>span.pmd-radio-label::before{
+  top:0;
+  border: 2px solid $clr-secondary;
+}
+.card .pmd-radio>span.pmd-radio-label::after{
+  top: 10px;
+  background: $clr-secondary;
+}
+.practice-area-card.card .pmd-radio>span.pmd-radio-label::before{
+  top:0;
+  border: 2px solid $clr-secondary;
+}
+.practice-area-card.card .pmd-radio>span.pmd-radio-label::after{
+  top: 10px;
+  background: $clr-secondary;
+}
+.radio-inline.pmd-radio { margin: 0; }
+
+/*------------- pmd radio btn css above -----------------------*/
+/* ---------------------------sumo-select css below ------------------------------------------------- */
+.SumoSelect.open >.CaptionCont,
+.SumoSelect:focus>.CaptionCont{
+ border: solid 1px $clr-secondary !important;
+ box-shadow: none;
+}
+.SumoSelect:hover >.CaptionCont{
+  box-shadow: none;
+  border-color: $clr-octonary;
+}
+.SumoSelect{ display: block; width: 100%; }
+.SumoSelect select{ display: none; }
+.SumoSelect>p.CaptionCont{
+  max-width: 100%;
+  height: 40px;
+  font-size: 13px;
+  color: $clr-quinary;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px 20px;
+  border: solid 1px $clr-quaternary;
+  text-align: left;
+}
+.SumoSelect.open>.optWrapper{ padding: 0 5px; }
+.SumoSelect>.CaptionCont>span.placeholder{
+  cursor: pointer;
+  font-style: normal;
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.SumoSelect>.optWrapper.selall.multiple>p.select-all.partial{ display: none; }
+.SumoSelect .select-all.partial>span i,
+.SumoSelect .select-all.selected>span i,
+.SumoSelect>.optWrapper.multiple>.options li.opt.selected span i{
+  background-color: $clr-secondary;
+  border: 1px solid $clr-primary;
+}
+.SumoSelect>.optWrapper>.options li.opt:hover{
+  background-color: $clr-secondary;
+}
+.SumoSelect>.optWrapper>.options li.opt label{ margin: 0; }
+.SumoSelect>.optWrapper>.options li.opt:hover label{ color: $clr-primary; margin: 0; }
+.SumoSelect .CaptionCont.SelectBox label{ margin: 0; right: 3px; }
+.SumoSelect>.CaptionCont>label>i{
+  background: url(/images/arrow-down.png) no-repeat center center;
+  border-left: 1px solid $clr-octonary;
+  border-right: 0;
+  padding: 2px 15px;
+  transform: rotate(0deg);
+  transition: transform 0s linear;
+}
+.SumoSelect.open>.CaptionCont>label>i{
+  transform: rotate(180deg);
+  transition: transform 0s linear;
+  border-right: 1px solid $clr-octonary;
+  border-left: 0;
+  padding: 0 15px;
+}
+/* react select css below -------------- */
+.react-select {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.react-select-trigger {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 31px;
+  padding: 6px 27px 6px 6px;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 3px;
+  border: 1px solid #d3d4d4;
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  background: {
+    color: $clr-primary;
+    image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2$clr-di/svg" width="21px" height="21px" viewBox="0 0 21 21"><polygon points="10.5,12 7,8.5 14,8.5"/></svg>');
+    repeat: no-repeat;
+    position: calc(100% - 5px) center;
+  }
+
+  &, &:active { color: black; }
+
+  &.react-select-enabled {  }
+
+  &.react-select-target-attached-top { border-radius: 0 0 3px 3px; }
+
+  &.react-select-target-attached-bottom { border-radius: 3px 3px 0 0; }
+
+  // truncate children with ellipsis
+  * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.react-select-trigger__option {
+  user-select: none;
+  & + & { margin-left: 6px; }
+  .react-select-trigger--multiple & {
+    padding: 0 3px;
+    border-radius: 2px;
+    background: #E6F9FF;
+  }
+}
+.react-select-trigger__arrow {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.react-select-menu {
+  max-height: 180px;
+  padding: 3px 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 2px 4px 0 rgba(218, 221, 222, 0.35);
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  pointer-events: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .react-select-enabled & {
+    pointer-events: auto;
+  }
+  .react-select-element-attached-top  & {
+    margin-top: -1px;
+    border-top: 0;
+  }
+  .react-select-element-attached-bottom  & {
+    margin-top: 1px;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 -2px 4px 0 rgba(218, 221, 222, 0.35);
+  }
+}
+
+.react-select-header {
+  display: flex;
+  padding: 8px;
+  border-bottom: 1px solid #F1F3F5;
+  border-top: 1px solid #F1F3F5;
+}
+
+.react-select-btn {
+  flex: 1;
+}
+
+.react-select-options {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.react-select-option {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-size: 14px;
+  text-indent: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: #FBFBFB;
+  }
+}
+
+.react-select-option__label {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.react-select-optgroup {
+  display: block;
+  padding: 3px 0;
+  cursor: default;
+  border-top: 1px solid #F1F3F5;
+
+  &:first-child {
+    border: 0;
+  }
+}
+
+.react-select-optgroup__title {
+  display: block;
+  padding: 8px 12px 6px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #909294;
+  user-select: none;
+}
+
+#app {
+  width: 300px;
+  margin: 0 auto;
+}
+
+// multi-select rw -------------------------
+.select-wrapper{ position: relative; }
+.select-wrapper label.carret{
+  position: absolute;
+  top: 10px;
+  right:3px;
+}
+.select-wrapper label.carret i{
+  background: url(/images/arrow-down.png) no-repeat center center;
+  border-left: 1px solid $clr-octonary;
+  border-right: 0;
+  padding: 2px 15px;
+  transform: rotate(0deg);
+  transition: transform 0s linear;
+}
+.pmd-select2.open label.carret i{
+  transform: rotate(180deg);
+  transition: transform 0s linear;
+  border-right: 1px solid $clr-octonary;
+  border-left: 0;
+  padding: 0 15px;
+}
+.rw-multiselect:hover{
+  border:solid 1px $clr-quaternary;
+}
+.rw-multiselect{
+  background-color: $clr-primary;
+  border-radius: 0;
+  box-shadow: none;
+  border: solid 1px $clr-quaternary;
+}
+.rw-multiselect-wrapper {
+  max-height: 123px;
+  overflow: auto;
+}
+.rw-multiselect-taglist>li{
+  margin: 5px 2px;
+  background-color: $clr-secondary;
+  border: 1px solid $clr-secondary;
+  color: $clr-primary;
+}
+ul.rw-list>li.rw-list-option:hover, .rw-selectlist>li.rw-list-option:hover {
+  background-color: $clr-secondary;
+  border-color: $clr-secondary;
+  color: $clr-primary;
+}
+.rw-multiselect-taglist li span{
+  padding: 0 5px;
+  display: inline-block;
+}
+.start-date{ padding-left: 15px; padding-right: 5px; }
+.end-date{ padding-left: 5px; padding-right: 15px; }
+// .start-date .rdt,
+// .end-date .rdt {
+//   ::after{
+//     content: '\f00d';
+//   }
+// }
+.start-date .rdt input, .end-date .rdt input{
+  background: url('/images/svg-images/Calendar.svg') 95% center;
+  background-repeat: no-repeat;
+}
+.start-date .rdt + span.clear, .end-date .rdt + span.clear{
+  position: absolute;
+  top: 16px;
+  background: url('/images/svg-images/close-black.svg') 95% center;
+  background-repeat: no-repeat;
+  height: 12px;
+  width: 12px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.start-date .rdt + span.clear{
+  left: 74%;
+  @include media($min: 841px, $max: 991px) {
+    left: 70%;
+  }
+  @include media($min: 768px, $max: 840px) {
+    left: 67%;
+  }
+  @include media($min: 641px, $max: 767px) {
+    left: 86%;
+  }
+  @include media($min: 568px, $max: 640px) {
+    left: 84%;
+  }
+  @include media($min: 411px, $max: 567px) {
+    left: 81%;
+  }
+  @include media($max: 410px) {
+    left: 76%;
+  }
+}
+.end-date .rdt + span.clear{
+  left: 70%;
+  @include media($min: 840px, $max: 1024px){
+    left: 65%;
+  }
+  @include media($min: 768px, $max: 840px) {
+    left: 61%;
+  }
+  @include media($min: 641px, $max: 767px) {
+    left: 86%;
+  }
+  @include media($min: 568px, $max: 640px) {
+    left: 84%;
+  }
+  @include media($min: 411px, $max: 567px) {
+    left: 81%;
+  }
+  @include media($max: 410px) {
+    left: 76%;
+  }
+}
+
+/*-------------------- react select css above ------------------*/
+
+/************************* responsive css begins below   Non-Mobile First Method  ************************/
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (max-width : 1199px) {
+
+  }
+  /*--------------------------------------------------- max-width: 1199px above ---------*/
+
+  @media (max-width: 1100px) {
+
+  }
+
+  /*---------------------------------------------------- max-width: 1100px above----------*/
+  /* Medium Devices, Desktops */
+  @media only screen and (max-width : 991px) {
+
+    .rdt + .fa.fa-calendar {
+      right: 22px;
+      padding: 3px 5px;
+    }
+    .location-slider-wrapper, .permanent-slidder-wrapper, .contract-slidder-wrapper{
+      display: block;
+      margin: 15px 5px 0 0;
+      text-align: left;
+    }
+    .pmd-range-slider{ min-width: 60%; }
+    .work-permanent .pmd-range-slider , .work-contract .pmd-range-slider{ min-width: 50%; }
+
+  }
+  /*----------------------------------------------------- max-width : 991px above -------*/
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 767px) {
+
+    .permanent-slidder-wrapper, .contract-slidder-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .permanent-slidder-wrapper>.range-value, .contract-slidder-wrapper>.range-value{ order: 2; }
+    .work-permanent .pmd-range-slider, .work-contract .pmd-range-slider{ order: 1; min-width: 100%; margin: 0 0 10px 0; }
+    .permanent-slidder-wrapper>.range-value.text-right, .contract-slidder-wrapper>.range-value.text-right{ order: 3; }
+    .card .group-radio { padding: 0 15px; }
+    .card .start-date.form-group{ padding-right: 5px; }
+    .card .end-date.form-group{ padding-right: 5px; }
+    .rdt + .fa.fa-calendar { right: 10px; padding: 3px 5px; }
+    .start-date{ padding-left: 15px; padding-right: 15px; }
+    .end-date{ padding-left: 15px; padding-right: 15px; }
+    .start-date.form-group input, .end-date.form-group input{ padding: 5px; }
+    .card .start-date.form-group{ padding-right: 15px; }
+    .card .end-date.form-group{ padding-right: 15px; }
+    .rdt + .fa.fa-calendar {
+      right: 30px;
+      padding: 3px 9px;
+    }
+    .start-date.form-group input, .end-date.form-group input{ padding: 10px 20px; }
+
+  }

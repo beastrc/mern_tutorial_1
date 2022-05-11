@@ -1,0 +1,238 @@
+/*-------------------------- FOOTER CSS below ---------------*/
+
+/*For STICKY FOOTER*/
+html {
+  min-height: 100%;
+  position: relative;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 9;
+}
+.footer-right > ul {
+  margin: 0;
+}
+/*For STICKY FOOTER Ends*/
+footer {
+  width: 100%;
+  height: auto;
+  background-color: $clr-mono;
+  border-top: 1px solid $clr-quaternary;
+  padding: 10px 0;
+}
+.footer-container {
+  margin: 0 22px 0 15px;
+  @include media($max: 479px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.footer-left {
+  font-size: 13px;
+  color: $clr-quinary;
+  float: left;
+  @include media($max: 767px) {
+    float: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+.footer-right {
+  float: right;
+  padding: 3.5px 0;
+  @include media($max: 767px) {
+    float: none;
+    margin-bottom:0;
+  }
+  > ul {
+    text-align: right;
+    @include media($max: 767px) {
+      text-align: center;
+    }
+    > li {
+      font-size: 12px;
+      color: $clr-quinary;
+      padding: 0 8px;
+      line-height: 1.43;
+      @include media($max: 767px) {
+        float: none;
+        margin-bottom: 10px;
+      }
+      > a {
+        font-size: 12px;
+        color: $clr-quinary;
+        display: block;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid $clr-quinary;
+      }
+    }
+  }
+}
+
+/*-------------------------- FOOTER CSS above --------------------------*/
+/* -------------- Footer (big) css below*/
+footer.large-footer {
+  background: url(/images/footer.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  height: auto;
+  padding: 0;
+  z-index: 11;
+  .container {
+    width: 80%;
+    padding-top: 52px;
+    @include media($max: 991px) {
+      width: 90%;
+    }
+    @include media($max: 479px) {
+      width: 100%;
+      padding-top: 15px;
+      .row {
+        .col-sm-4 {
+          .content-container{
+            border-bottom: solid 1px #979797;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            .footer-head {
+              position: relative;
+              cursor: pointer;
+              &.add-icon::before {
+                content: '';
+                background: url("/images/svg-images/add.svg") no-repeat;
+                position: absolute;
+                right: 10px;
+                top: 0;
+                height: 13px;
+                width: 13px;
+              }
+              &.sub-icon::before {
+                content: '';
+                background: url("/images/svg-images/subtract.svg") no-repeat;
+                position: absolute;
+                right: 10px;
+                top: 9px;
+                height: 13px;
+                width: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  h3 {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0 0 30px;
+    font-family: 'open_sansregular';
+    pointer-events: none;
+    @include media($max: 767px) {
+      margin: 0 0 10px;
+    }
+    @include media($max: 479px) {
+      font-size: 16px;
+      margin: 15px 0 10px;
+      pointer-events: auto;
+    }
+  }
+  p {
+    line-height: 1.87;
+    margin: 0;
+    a {
+      color: $clr-octonary;
+      display: inline-block;
+      font-size: 15px;
+      &:hover {
+        color: $clr-primary;
+      }
+      @include media($max: 479px) {
+        font-size: 14px;
+        line-height: 2;
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    color: $clr-octonary;
+    margin-top: 30px;
+    font-size: 14px;
+    border-top: 2px solid rgba(151, 151, 151, 0.5);
+    line-height: 1;
+    padding: 28px 0;
+    @include media($max: 479px) {
+      text-align: left;
+      color: $clr-octonary;
+      margin-top: 15px;
+      padding: 18px 0;
+    }
+  }
+  ul {
+    margin: 0;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      flex-basis: 40px;
+      + li {
+        margin-left: 0;
+      }
+      a {
+        display: block;
+        padding: 5px 0;
+        text-align: center;
+        font-size: 18px;
+        color: $clr-primary;
+        border: solid 1px $clr-octonary;
+        &[title="Facebook"]:hover {
+          background: #3b5998;
+          border-color: #3b5998;
+        }
+        &[title="Twitter"]:hover {
+          background: #0077b5;
+          border-color: #0077b5;
+        }
+        &[title="LinkedIn"]:hover {
+          background: #1da1f2;
+          border-color: #1da1f2;
+        }
+      }
+    }
+  }
+  .social-icons a {
+    height: 40px;
+    width: 40px;
+    padding: 11px 0;
+    margin: 0 5px 0 0;
+    @include media($max: 479px) {
+      height: 30px;
+      width: 30px;
+      padding: 6px 0;
+    }
+  }
+  .footer-inner {
+    display: block;
+    @include media($max: 767px) {
+      margin: 0 0 15px;
+    }
+    @include media($max: 479px) {
+      display: none;margin: 0;
+    }
+  }
+  .footer-right > ul > li {
+    line-height: 1.1;
+    @include media($max: 479px) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+/*--------------- Footer (big) Ends Here ---------------*/

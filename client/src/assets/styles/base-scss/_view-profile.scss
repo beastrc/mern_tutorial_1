@@ -1,0 +1,347 @@
+.view-profile-wrapper{
+  // max-width: calc(100% - 250px);
+  width: calc(100% - 250px);
+  background-color: #f6f8fb;
+  // margin: 70px 0;
+  float: left;
+  padding: 30px;
+  .section-head{
+    background-color: transparent;
+    margin: 0 0 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+      .breadcrumb{
+        p{
+          a{
+            @include fonts($size: 14px, $colour: $clr-di, $txt-trans: capitalize);
+            border-bottom: 1px solid;
+          }
+        }
+      }
+    h2{
+      @include fonts($family: $font3, $size: 18px, $colour: $clr-secondary, $weight: normal, $txt-trans: uppercase, $ls: false, $lh: false);
+      text-align: left;
+      float: left;
+      margin: 0;
+      p{
+        @include fonts($size: 14px, $colour: $clr-di, $txt-trans: capitalize);
+        text-align: left;
+        margin: 5px 0 0 0;
+      }
+    }
+    button{
+      float: right;
+      i.fa{
+        @include fonts($family: false, $size: 14px, $colour: $clr-secondary, $txt-trans: uppercase);
+        text-align: left;
+        padding: 0 14px 0 0;
+      }
+    }
+    @include media($max: 767px) {
+      margin: 15px;
+      align-items: center;
+    }
+  }
+
+  .tab-wrapper {
+    background-color: #ffffff;
+    .nav{
+      padding: 0;
+      border-bottom: solid 2px #e1e1e2;
+      .nav-item{
+        display: inline-block;
+        width: 50%;
+        .nav-link{
+          @include fonts($size: 15px, $colour: $clr-tertiary, $txt-trans: capitalize);
+          text-align: center;
+          padding: 0 70px;
+          margin: 21px 0;
+          &:hover, &:focus{
+            background-color: transparent;
+          }
+          @include media($max: 479px) {
+            font-size: 14px;
+          }
+        }
+        &.active{
+          .nav-link{
+            @include fonts($colour: $clr-di, $weight: bold);
+          }
+        }
+      }
+      .nav-item:nth-of-type(1) .nav-link{
+        border-right: solid 2px #e1e1e2;
+        text-align: right;
+        @include media($max: 991px) {
+          text-align: center;
+          padding: 0;
+        }
+      }
+      .nav-item:nth-of-type(2) .nav-link{
+        text-align: left;
+        @include media($max: 991px) {
+          text-align: center;
+          padding: 0;
+        }
+      }
+      .nav-item.active:first-child .nav-link::after{
+        @include pseudo($display: block, $pos: absolute, $content: '')
+        border-bottom: 2px solid #326fb2;
+        width: 100px;
+        right: 75px;
+        bottom: -5px;
+        @include media($max: 991px) {
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+        }
+      }
+      .nav-item.active:last-child .nav-link::after{
+        @include pseudo($display: block, $pos: absolute, $content: '')
+        border-bottom: 2px solid #326fb2;
+        width: 70px;
+        left: 75px;
+        bottom: -5px;
+        @include media($max: 991px) {
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+    // tab ends here
+    .tab-content {
+      padding: 30px;
+      word-wrap: break-word;
+      p{
+        @include fonts($size: 14px, $colour: $clr-tertiary, $lh: 1.86);
+      }
+      h3{
+        @include fonts($size: 20px, $colour: $clr-di, $txt-trans: capitalize);
+        @include media($max: 479px) {
+          font-size: 15px;
+        }
+      }
+      h4{
+        @include fonts($size: 15px, $colour: $clr-di, $txt-trans: capitalize);
+        @include media($max: 767px) {
+          font-size: 12px;
+        }
+      }
+      h5{
+        @include fonts($family: $font3, $size: 13px, $colour: $clr-quinary, $txt-trans: uppercase);
+      }
+      h6{
+        @include fonts($size: 15px, $colour: #5f5f5f, $lh: 1.73);
+        @include media($max: 479px) {
+          font-size: 13px;
+        }
+      }
+      .p1{
+        @include fonts($size: 14px, $colour: #5f5f5f, $lh: 1.86);
+      }
+      .basic-info-preview,
+      .poster-info-preview{
+        margin: 0 0;
+        padding: 0 0 30px 0;
+        border-bottom: solid 2px #e1e1e2;
+        figure{
+          float: left;
+          margin: 0 40px 0 0;
+          img{
+            width: 150px;
+            height: 150px;
+          }
+          @include media($max: 991px) {
+            float: none;
+            margin: 0 20px 15px 0;
+          }
+        }
+        .basic-info-content,
+        .poster-info-content{
+              max-width: 100%;
+              width: calc(100% - 190px);
+          h3{
+            @include truncate(99%);
+            margin: 0 0 10px 0;
+          }
+          h4{
+            @include fonts($size: 15px, $colour: $clr-di, $txt-trans: capitalize);
+            @include truncate();
+          }
+          h5{
+            @include fonts($size: 15px, $colour: #5f5f5f, $lh: 1.73);
+            margin: 0 0 10px 0;
+            @include truncate();
+          }
+          address, a{
+            @include fonts($size: 14px, $colour: $clr-tertiary);
+            margin: 0 0 10px 0;
+            @include media($max: 479px) {
+              font-size: 13px;
+              @include truncate();
+            }
+          }
+          i.fa{
+            color: $clr-secondary;
+            margin: 0 12px 0 0;
+          }
+        }
+        .basic-info-content{
+          float: left;
+          @include media($max: 991px) {
+            float:none;
+            width: 100%;
+          }
+        }
+        @include media($max: 991px) {
+          border: 0;
+          padding: 0 0 10px 0;
+        }
+      }
+      #panel2{
+        .basic-info-preview,
+        .poster-info-preview{
+          .poster-info-content{
+            width: 100%;
+          }
+        }
+      }
+      .poster-info-preview{
+        border-bottom: solid 2px #e1e1e2;
+        margin-bottom: 0px;
+        padding: 0 0 30px;
+        @include media($max: 992px) {
+          border-bottom: 0;
+        }
+      }
+      // basic-info-preview ends here
+      .about-lawyer-preview,
+      .education-preview,
+      .licensure-preview,
+      .skills-preview,
+      .experience-preview,
+      .job-type-preview,
+      .poster-conclusion-preview{
+        margin: 0 0;
+        padding: 30px 0;
+        border-bottom: solid 2px #e1e1e2;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center!important;
+        -webkit-align-items: center!important;
+        -ms-flex-align: center!important;
+        align-items: center!important;
+        h5{
+          @include truncate();
+          float: left;
+          width: 150px;
+          margin: 0;
+          padding: 14px 0;
+          border-right: solid 2px #e1e1e2;
+          @include media($max: 991px) {
+            float: none;
+            border: 0;
+            width: 100%;
+          }
+          @include media($max: 767px) {
+            font-size: 12px;
+            padding: 0 0 10px;
+          }
+          &.outline{
+            outline: 1px solid #e1e1e1 !important;
+            outline-offset: 10px;
+            margin: 0 0 30px 0;
+            padding: 4px;
+          }
+        }
+        div.left-content{
+          padding: 0 0 0 40px;
+          max-width: calc(100% - 150px);
+          @include media($max: 991px) {
+            float: none;
+            max-width: 100%;
+            padding: 0;
+          }
+        }
+        p{
+          @include fonts($size: 14px, $colour: $clr-tertiary, $lh: 1.86);
+          margin: 0;
+          @include media($max: 767px) {
+            font-size: 12px;
+          }
+        }
+        .p1{
+          @include fonts($size: 14px, $colour: #5f5f5f, $lh: 1.86);
+        }
+        h4, h6{
+          margin: 5px 0;
+        }
+        .badge{
+          @include fonts($size: 13px, $colour: $clr-secondary, $txt-trans: capitalize);
+          @include truncate(100%);
+          height: 30px;
+          border-radius: 3px;
+          text-align: center;
+          padding: 8px 10px;
+          background-color: #edf6fe;
+          margin: 5px 3px;
+          vertical-align: middle;
+          cursor: default;
+        }
+        @include media($max: 991px) {
+          display: block;
+          border: solid 2px #e1e1e2;
+          margin: 0 0 10px 0;
+          padding: 15px;
+        }
+      }
+
+      .licensure-preview{
+        p{
+          span{
+            @include fonts($size: 15px, $colour: $clr-quinary, $lh: 1.73);
+            @include media($max: 479px) {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      .experience-preview{
+        .badge{
+          margin: 0 5px 5px 0;
+        }
+        p{
+          .em-span{
+            color: #525252;
+          }
+        }
+      }
+      .job-type-preview{
+        h6{
+          .em-span{
+            color: $clr-quinary;
+          }
+        }
+      }
+      .poster-conclusion-preview{
+        border-bottom: 0;
+        @include media($max: 991px) {
+          border-bottom: solid 2px #e1e1e2;
+        }
+      }
+      @include media($max: 767px) {
+        padding: 15px;
+      }
+    }
+  }
+  @include media($max: 767px) {
+    width: 100%;
+    padding: 0;
+  }
+  @include media($max: 480px) {
+    margin: 0;
+  }
+}

@@ -1,0 +1,40 @@
+/* Functions and mixins are very similar in nature. Mixin and function both accepts arguments and do calculations. Function differs because, output from a function is a single value */
+
+/* When you need to generate styles, use a mixin. When you need to encapsulate some logic, especially if you intend to use it across different elements in your project, then use a function.  */
+/*
+imp predefined functions -
+	Number Functions
+	String Functions
+	List Functions #list-functions
+	Selector Functions
+	Introspection Functions
+	Miscellaneous Functions:- if($condition, $if-true, $if-false)
+*/
+
+/* function for griding */
+$col-count: 12;
+@function col-pct($columns) {
+    @return unquote((100/$col-count)*$columns+"%");
+}
+/* div{
+	width: col-pct(4);
+} */
+
+@for $i from 1 through 12{
+  .#{class-slug}-#{$i}{
+    width: 100/12*$i + '%';
+  }
+}
+
+
+
+
+
+/*
+online tool to write scss -
+	https://www.sassmeister.com/
+
+ref -
+	http://sass-lang.com/documentation/Sass/Script/Functions.html
+*/
+

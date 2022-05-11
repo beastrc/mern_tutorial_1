@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?y2kkif');
+  src:  url('fonts/icomoon.eot?y2kkif#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?y2kkif') format('truetype'),
+    url('fonts/icomoon.woff?y2kkif') format('woff'),
+    url('fonts/icomoon.svg?y2kkif#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-contact-icon .path1:before {
+  content: "\e914";
+  color: rgb(24, 51, 97);
+}
+.icon-contact-icon .path2:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-msg-icon .path1:before {
+  content: "\e916";
+  color: rgb(24, 51, 97);
+}
+.icon-msg-icon .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-msg-icon .path3:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-briefcase:before {
+  content: "\e90f";
+  color: #013759;
+}
+.icon-Calendar .path1:before {
+  content: "\e910";
+  color: rgb(212, 217, 226);
+}
+.icon-Calendar .path2:before {
+  content: "\e911";
+  margin-left: -1.0380859375em;
+  color: rgb(204, 204, 204);
+}
+.icon-dropdown-caret .path1:before {
+  content: "\e912";
+  color: rgb(212, 217, 226);
+}
+.icon-dropdown-caret .path2:before {
+  content: "\e913";
+  margin-left: -0.9228515625em;
+  color: rgb(204, 204, 204);
+}
+.icon-edit-profile-mobile:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-error:before {
+  content: "\e901";
+}
+.icon-job-briefcase-mobile:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-location-icon:before {
+  content: "\e903";
+  color: #3270b2;
+}
+.icon-message-mobile:before {
+  content: "\e904";
+  color: #fff;
+}
+.icon-ok .path1:before {
+  content: "\e905";
+  color: rgb(102, 102, 102);
+}
+.icon-ok .path2:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(50, 112, 178);
+  opacity: 0.2;
+}
+.icon-sign-out:before {
+  content: "\e907";
+  color: #999;
+}
+.icon-sign-out-mobile:before {
+  content: "\e908";
+  color: #fff;
+}
+.icon-subtract:before {
+  content: "\e909";
+  color: #d8d8d8;
+}
+.icon-upload-photo:before {
+  content: "\e90a";
+}
+.icon-add:before {
+  content: "\e90b";
+  color: #d8d8d8;
+}
+.icon-change-password:before {
+  content: "\e90c";
+  color: #3270b2;
+}
+.icon-change-password-mobile:before {
+  content: "\e90d";
+  color: #fff;
+}
+.icon-edit-profile:before {
+  content: "\e90e";
+  color: #999;
+}

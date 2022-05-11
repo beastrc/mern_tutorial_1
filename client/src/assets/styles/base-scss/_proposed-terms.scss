@@ -1,0 +1,41 @@
+.proposed-terms{
+	.card{
+		box-shadow: none;
+		padding: 0;
+		label{
+			font-size: 13px;
+		}
+	}
+	.separator{
+		margin: 0 -30px;
+	}
+	.btn {
+		text-align: right;
+		@include media($max: 767px) {
+			display: block;
+			margin: 0 0 10px auto;
+		}
+	}
+	.remain-buttons{
+		.btn :first-child{
+			margin-bottom: 10px;
+		}
+	}
+}
+.proposed-terms-footer{
+	margin: 0 -30px -30px;
+  padding: 10px 30px 10px;
+  .separator{
+    margin: 0 -30px 10px;
+    @include media($max: 767px) {
+    	margin: 0 -15px 10px;
+    }
+  }
+  .proposed-terms-footer .btn{
+  	margin-left: -10px;
+  }
+  @include media($max: 767px) {
+  	margin: 0 -15px -30px;
+  	padding: 10px 15px 10px;
+  }
+}

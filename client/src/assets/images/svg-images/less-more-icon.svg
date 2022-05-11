@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="15" cy="15" r="15" fill="#D0021B"/>
+        <text fill="#FFF" font-family="FontAwesome" font-size="13" letter-spacing="1">
+            <tspan x="9.393" y="20"></tspan>
+        </text>
+    </g>
+</svg>

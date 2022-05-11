@@ -1,0 +1,185 @@
+/*------------------- basic mixins below -----------------*/
+
+/* 1. set your fallback font once and you never have to worry again.  */
+@mixin fonts($family: $font1, $size: false, $colour: false, $weight: normal, $txt-trans: false, $ls: false, $lh: false) {
+  @if $family { font-family: $family; }
+  @if $size { font-size: $size; }
+  @if $ls { letter-spacing: $ls; }
+  @if $txt-trans { text-transform: $txt-trans; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+/* div{
+  @include fonts($family: open_sansregular, $size: false, $ls: false, $txt-trans: false, $colour: false, $weight: false,  $lh: false);
+} */
+
+/* 2. vender prefix -------------------------------------------- */
+@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  @if $default {
+    #{$property}: #{$value};
+  }
+}
+/* html {
+  @include prefix('box-sizing', 'border-box', webkit moz);
+} */
+
+// 3. styling buttons ---------------------------------------------
+@mixin button-style($width: false, $height: false, $bg-color: false, $border: false, $txt-align: false) {
+  @if $width { width: $width; }
+  @if $height { height: $height; }
+  @if $bg-color { background-color: $bg-color; }
+  @if $border { border: $border; }
+  @if $txt-align { text-align: $txt-align; }
+}
+// div{
+//   @include fonts($family: false);
+//   @include button-style($border: 1px solid red, $width: 100px);
+// }
+
+/* 4. Centre a element horizontaly -----------------------------*/
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 5. Vertical centering ----------------------------------------*/
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), webkit ms moz);
+}
+
+/* When using ::before and ::after you'll always need these three, so we're saving two lines of code every time you use this.  */
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+/* 6. Adding Truncation to an element ---------------------------*/
+@mixin truncate($truncation-boundary: 90%) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* clearfix the SASS way. ------------------------------------*/
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+// .cf { @include clearfix; }
+
+/* 7. ensure cross browser opacity ------------------------------*/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* 8. Position element ( by default absolute ) -------------------*/
+@mixin abs-pos($position: absolute, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: $position;
+}
+
+/* 9. interpolation ---------------------------------------------*/
+$properties: (margin, padding);
+@mixin set-value($side, $value) {
+  @each $prop in $properties {
+    #{$prop}-#{$side}: $value;
+  }
+}
+// .eg-interpolation {
+//     @include set-value(top, 14px);
+// }
+/* 10. responsive font-size ---------------------------------------------*/
+@mixin generate-sizes($class, $small, $medium, $large ) {
+  .#{$class}-small { font-size: $small; }
+  .#{$class}-medium { font-size: $medium; }
+  .#{$class}-large { font-size: $large; }
+}
+/* @include generate-sizes("header-text", 12px, 20px, 40px); */
+
+/* 11. keyframe / animation -------------------------------------*/
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+/* 12. mixin for transition ---------------------------------------*/
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+/* 13. Mixin for media query breakpoints --------------------------*/
+
+@mixin media($min: 2px, $max: false) {
+  @if $min == false{
+    @media only screen and (max-width: #{$max}) {
+      @content;
+    }
+  }
+  @if $max == false{
+    @media only screen and (min-width: #{$min}) {
+      @content;
+    }
+  }
+  @if $min != false and $max != false{
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+  @if $min == false and $max == false{
+      @warn "Sorry, either $min or $max must have a value other than false";
+  }
+}
+/* div{
+  @include media($min: false, $max: false){
+    color:green;
+    @include fonts();
+  }
+} */
+
+// 1199px - 1100px - 991px - 767px - 640px - 580px - 479px - 320px - 2px
+
+// text-shadow
+// text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+
+
+
+// =============================================================
+/* link for online sass below -
+  https://www.sassmeister.com
+
+ref -
+  https://engageinteractive.co.uk/blog/top-10-scss-mixins
+
+  for vender prefix properties -
+  http://shouldiprefix.com/#flexbox
+*/
+
+// =============================================================

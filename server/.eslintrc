@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base/legacy", "prettier", "../eslintrc"],
+  "plugins": [],
+  "rules": {
+    "arrow-body-style": "off",
+    "consistent-return": "off",
+    "no-console": "off",
+    "camelcase": "off",
+    "global-require": "off",
+    "constructor-super": "warn",
+    "class-methods-use-this": "off",
+    "no-const-assign": "warn",
+    "no-nested-ternary": "off",
+    "no-param-reassign": "off",
+    "no-this-before-super": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "no-underscore-dangle": "off",
+    "max-classes-per-file": "off",
+    "no-fallthrough": "off",
+    "one-var": "off",
+    "func-names": "off",
+    "dot-notation": "off",
+    "no-var": "error",
+    "strict": "off",
+    "prefer-object-spread": "off"
+  },
+  "globals": {
+    "Promise": true
+  }
+}

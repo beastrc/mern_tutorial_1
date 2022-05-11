@@ -1,0 +1,516 @@
+/*----------------- HOME PAGE HEADER BELOW ------------------*/
+.static-page-header.home-page-header.trans-header .navbar{
+  background-color: transparent !important;
+  color: $clr-primary;
+  font-size: 16px;
+  height: 70px;
+  ul.menus {
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  button {
+    height: 50px;
+    width: 180px !important;
+  }
+  .navbar-brand{
+    margin: 0;
+    padding-top:5px;
+  }
+  li.sign-in-up {
+    .fa-unlock-alt::before{
+      color: $clr-primary;
+    }
+    a{
+      color: $clr-primary;
+      &:hover{
+        color: $clr-primary;
+      }
+    }
+  }
+  .navbar-right-wraper >{
+    ul >{
+      li {
+        .dropdown >{
+          button{
+            color: $clr-primary;
+            &:hover,
+            &:focus,
+            &.active{
+              color: $clr-primary !important;
+            }
+          }
+        }
+        // .icon-briefcase::before{
+        //   color: $clr-primary;
+        // }
+      }
+    }
+  }
+
+}// trans-header
+
+.static-page-header.home-page-header .navbar {
+  background-color: $clr-primary;
+  padding: 0;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+  .navbar-brand{
+    margin: 0;
+    padding-top:5px;
+  }
+  ul.menus {
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  button {
+    height: 50px;
+    width: 180px !important;
+  }
+  > .row {
+    border: 0;
+    padding: 10px 0;
+    border-bottom: solid 2px #ffffff33;
+  }
+  .transy-btn, .yellow-btn{
+    font-family: $font3;
+  }
+}
+
+header.home-page-header {
+  .navbar {
+    background-color: transparent;
+    padding: 15px 0 0;
+    color: #919191;
+    font-size: 16px;
+    > .row {
+      padding: 0 0 15px;
+      border-bottom: solid 1px rgba(255, 255, 255, 0.22);
+      height: auto;
+      margin: 0 30px;
+      @include media($max: 767px) { margin: 0 15px; }
+    }
+    &.navbar-blue {
+      background-color: $bg-tertiary;
+      padding-bottom: 15px;
+      > .row {
+        border-bottom: none;
+        padding: 0;
+      }
+    }
+    @include media($min: false, $max: 479px) {
+      padding: 15px 15px 0;
+    }
+  }
+  li.sign-in-up
+  {
+    a {
+      font-family: $font1;
+      font-size: 16px;
+      color: #919191;
+      &:hover{
+        color: #3270b2;
+      }
+      @include media($min: false, $max: 580px) {
+        font-size: 12px;
+      }
+    }
+    .fa{
+      color: #013759;
+      font-size: 20px;
+      padding-right: 5px;
+    }
+  }
+}
+
+/*------------------- navbar below -------------------*/
+.navbar {
+  background: $clr-primary;
+  height: 70px;
+  padding: 15px;
+  color: $bg-tertiary;
+  margin: 0;
+  .container-fluid {
+    height: 40px;
+  }
+  .navbar-brand {
+    padding: 0;
+    margin: 0 !important;
+    > img {
+      display: block;
+      min-width: 90px;
+      width: 160px;
+      max-width: 90%;
+      @include media($max: 767px) {
+        margin: 0 0 0 20px;
+      }
+      @include media($max: 479px) {
+        margin: 5px 0 0 25px;
+      }
+    }
+    @include media($max: 479px) {
+      padding-left: 10px;
+    }
+  }
+  .navbar-mid-wraper {
+    text-align: center;
+  }
+  .navbar-right-wraper {
+    padding: 0;
+    > ul {
+      margin: 0;
+      padding: 0;
+      li.briefcase{
+        a{
+          font-size: 22px;
+        }
+      }
+      > li {
+        display: inline-block;
+        padding: 0;
+        vertical-align: middle;
+        line-height: 1;
+        > {
+          .profile-pic {
+            margin-right: 20px;
+            background-color: #d8d8d8;
+            border: solid 0px $clr-primary;
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            > img {
+              max-width: 44px;
+              max-height: 44px;
+              height: 100%;
+              @include media($min: false, $max: 580px) {
+                width: 30px;
+                height: 30px;
+              }
+            }
+            @include media($min: false, $max: 580px) { margin-right: 5px;
+              width: 30px;
+              height: 30px;
+            }
+          }
+          .dropdown
+            >{ button {
+              max-width: 145px;
+              min-width:auto;
+              display: inline-block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              word-wrap: break-word;
+              max-height: 31px;
+              min-height: 7px;
+              line-height: 1.4;
+              vertical-align: middle;
+              border: 0px;
+              color: #919191;
+              text-decoration: none;
+              background: transparent;
+              font-family: "open_sanssemibold";
+              font-size: 16px;
+              padding: 0 20px 0 0;
+              .caret{
+                position: absolute;
+                top: 45%;
+                right: 0px;
+              }
+              .user-name {
+                @include media( $max: 991px) {
+                    display: none;
+                }
+              }
+              &:active, &:hover, &:focus{
+                color: #919191;
+              }
+            }
+            .dropdown-menu{
+              left: auto !important;
+              right: 0 !important;
+              min-width: 100%;
+              box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+              border: solid 1px #f4f4f4;
+            }
+          }
+          .dropdown > button:focus {
+            background: transparent;
+          }
+        }
+        &.dropdown > button {
+          color: #919191;
+          text-decoration: none;
+          font-family: "open_sanssemibold";
+          &::after {
+            content: "\f107";
+            font-family: 'FontAwesome';
+            margin-left: 10px;
+            @include media($min: false, $max: 580px) { margin-left: 4px; }
+          }
+          @include media($min: false, $max: 580px) { font-size: 10px; }
+        }
+        @include media($min: false, $max: 580px) { }
+      }
+    }
+  }
+}
+.pmd-dropdown.open > .pmd-dropdown-menu-container{ top:51px; }
+
+/*----------------- user profile dropdown below ----------------*/
+.dropdown-menu {
+  padding: 0 15px;
+  > li {
+    padding: 0px;
+    > a {
+      font-size: 15px;
+      text-align: left;
+      color: $clr-tertiary;
+      padding: 15px 0 !important;
+      border-bottom: 2px solid #f0f0f0;
+      cursor: pointer;
+      i.fa{
+        color: #b0b0b0;
+        padding: 0 10px 0 0;
+      }
+    }
+    &:last-child > a {
+      border: 0;
+    }
+    &:hover {
+      > a {
+        color: $clr-secondary;
+        background-color: transparent;
+      }
+      > a > span::before {
+        color: $clr-secondary;
+      }
+    }
+    > a > span {
+      padding: 0 10px 0 0;
+      &::before {
+        color: #a2a2a2;
+      }
+    }
+  }
+}
+
+/************************** Mobile header css below **************************/
+.mobile-header.trans-header{
+  .navbar{
+    background-color: transparent;
+  }
+  .hamburger-icon .icon-bar{
+    background-color: $clr-primary;
+    cursor: pointer;
+  }
+  .navbar-mid-wraper{
+    // display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70;
+    background-color: transparent;
+    border: none;
+  }
+  .navbar-right-wraper{
+    ul{
+      li.sign-in-up{
+        color: $clr-primary;
+        a{
+          color: $clr-primary;
+        }
+      }
+    }
+    .caret{
+      color: $clr-primary;
+    }
+    // .icon-briefcase::before{
+    //   color: $clr-primary;
+    // }
+  }
+}
+
+.mobile-header {
+  background-color: transparent;
+  .navbar-mid-wraper{
+    // margin-top: 70px;
+    background-color: $clr-primary;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid $clr-tri;
+  }
+}
+.static-page-header.home-page-header{
+  .left.hamburger-icon{
+    left: 0;
+    right: auto;
+    display: none;
+    @include media($min: 481px, $max: 767px) {
+      display: block;
+    }
+  }
+}
+.mobile-header {
+  .left.hamburger-icon{
+    left: 0;
+    right: auto;
+    display: none;
+    @include media($max: 481px) {
+      display: block;
+    }
+  }
+}
+  .hamburger-icon {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    cursor: pointer;
+    bottom: 0;
+    margin: 0 auto;
+    height: 16px;
+    color: $clr-primary;
+    .icon-bar {
+      display: block;
+      width: 20px;
+      height: 2px;
+      @include prefix('border-radius', 0);
+      background: $bg-tertiary;
+      + .icon-bar {
+        margin-top: 6px;
+      }
+    }
+    &.cross-icon .icon-bar {
+      background: url(/images/close-icon.png) no-repeat;
+      background-size: cover;
+      height: 13px;
+      width: 13px;
+      margin: 3px 0 0 5px;
+      + .icon-bar {
+        display: none;
+      }
+    }
+  }
+.mobile-header {
+  .navbar-right-wraper {
+    padding: 0 15px;
+    height: 50px;
+      ul{
+        li.sign-in-up{
+          a{
+            color: #919191;
+          }
+        }
+      }
+    @include media($max: 479px) {
+      padding: 0 15px 0 0;
+    }
+  }
+}
+
+.mobile-menu {
+  background: $bg-tertiary;
+  position: fixed;
+  left: 0px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  max-width: 250px;
+  width: 70%;
+  height: 100%;
+  padding-top: 40px;
+  left: -81%;
+  overflow-x: hidden;
+  transform: translateZ(0);
+  transition: all 300ms ease;
+  &.slide-show {
+    left: 0% !important;
+    img {
+      display: block;
+      margin: auto;
+      max-width: 45px;
+      max-height: 45px;
+    }
+    ul {
+      margin-top: 13px;
+      li {
+        padding: 17px 20px;
+        &:not(:last-child) {
+          border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+        }
+        a {
+          color: $clr-primary;
+          line-height: 1;
+          display: block;
+          .icon-edit-profile::before, .icon-change-password::before, .icon-sign-out::before {
+            color: $clr-primary;
+          }
+          span {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+/************************** Mobile header css above **************************/
+
+/*-------------------------- responsive css begins below Non-Mobile First Method ------------------------------*/
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 768px) {
+
+    .home-page-header .transy-btn,
+    .home-page-header .yellow-btn
+    { width: 130px; }
+
+  }
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 767px) {
+
+    .home-page-header .transy-btn,
+    .home-page-header .yellow-btn
+    { width: 85px; font-size: 14px; }
+
+  }
+
+  @media only screen and (max-width : 640px) {
+
+    .home-page-header .yellow-btn {
+      width: 62px;
+      font-size: 10px;
+      margin: 0 2px;
+    }
+  }
+
+  @media only screen and (max-width : 580px) {
+
+    .home-page-header .transy-btn {
+      width: 65px;
+      font-size: 10px;
+    }
+    .navbar .container-fluid{
+      padding: 5px 0;
+      border-bottom: solid 1px #ffffff33;
+      height: auto;
+    }
+
+  }
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width : 479px) {
+
+    header.static-page-header .navbar {
+      padding: 10px 0;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+    .mobile-header .transy-btn,
+    .mobile-header .yellow-btn
+    { width: 100px; }
+
+  }
+
+  /* Custom, iPhone Retina */
+  @media only screen and (max-width : 320px) {
+
+  }
+/*-------------------------- responsive css ends here ------------------------------*/

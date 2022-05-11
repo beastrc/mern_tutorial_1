@@ -1,0 +1,658 @@
+.experience-page { background-color: #f6f8fb; }
+.network-page { background-color: #f6f8fb; }
+.job-type-page { background-color: #f6f8fb; }
+/*------------ form / cards below --------------------*/
+.form.change-password-form {
+  position: relative;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 3px 5px 0 rgba(187, 187, 187, 0.5);
+  padding: 30px 55px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  > {
+    h4 {
+      font-size: 20px;
+      color: #666666;
+      cursor: default;
+      text-align: left;
+      margin: 0 0 30px;
+      @include media($max: 767px) {
+        font-size: 16px;
+      }
+    }
+    h5 {
+      font-size: 16px;
+      color: #333333;
+      text-transform: uppercase;
+    }
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.71;
+    text-align: center;
+    color: #666666;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  img {
+    margin: 70px auto 0;
+  }
+  label {
+    font-size: 13px;
+    font-family: 'open_sanssemibold';
+    color: #666666;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: normal;
+    display: block;
+  }
+  input, select {
+    @include prefix('border-radius', 0);
+    height: 45px;
+    font-size: 14px;
+    color: #333333;
+    box-shadow: none;
+    padding: 9px 20px;
+    border: solid 1px #d4d9e2;
+    &:focus{
+      box-shadow: none;
+      border: solid 1px #d4d9e2;
+    }
+    @include media($min: 768px, $max: 840px) {
+      padding: 9px 12px;
+    }
+  }
+  input.disabled {
+    background-color: #efefef !important;
+    border: 0;
+  }
+  select {
+    background-image: url(/images/svg-images/dropdown-caret.svg);
+    background-repeat: no-repeat;
+    // background-position: 95%;
+    background-position: right 16px center;
+    background-size: 24px;
+    position: relative;
+  }
+  .Select-control{
+    background-image: url(/images/svg-images/dropdown-caret.svg);
+    background-repeat: no-repeat;
+    // background-position: 95%;
+    background-position: right 16px center;
+    background-size: 24px;
+    position: relative;
+  }
+  textarea {
+    @include prefix('border-radius', 0);
+    resize: none;
+    font-size: 14px;
+    text-align: left;
+    color: #333333;
+    box-shadow: none;
+    min-height: 80px;
+    border: solid 1px #d4d9e2;
+    padding: 10px 20px;
+    &:focus{
+      box-shadow: none;
+      border: solid 1px #d4d9e2;
+    }
+  }
+  .datepicker {
+    @include prefix('border-radius', 0);
+    height: 40px;
+    font-size: 13px;
+    color: #333333;
+    box-shadow: none;
+    padding: 10px 20px;
+    border: solid 1px #d4d9e2;
+  }
+  &.thank-you-card {
+    position: relative;
+    padding: 40px 25%;
+    margin: 0;
+    @include media($max: 767px) {
+      padding: 40px 15px;
+      margin-bottom: 20px;
+      h4{
+        margin: 40px 0 20px;
+      }
+      p{ margin: 0; }
+    }
+  }
+  &.malpractice-insurance-card {
+    padding: 30px 55px 50px;
+  }
+  &.experience-card {
+    padding: 30px 55px 40px;
+  }
+  &.change-password-card {
+    padding: 60px 0;
+    margin: 0 auto;
+    padding-top: 50px;
+    h4 {
+      font-size: 24px;
+      text-align: center;
+      color: #2c2c2d;
+      margin: 0 0 14px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.71;
+      color: #666666;
+      text-align: center;
+    }
+    > p {
+      margin: 0 26px;
+    }
+  }
+  @include media($max: 767px)
+  {
+    padding: 20px;
+  }
+}
+
+.card {
+  &.job-posting-card {
+    @include media($min: 768px, $max: 841px) {
+      padding: 30px 15px 20px;
+    }
+  }
+}
+/* -------------- sign up network profile css starts here------------*/
+
+.card {
+  &.network-card {
+    position: relative;
+    margin-top: 75px;
+    padding-top: 90px;
+  }
+  span.icon-upload-photo {
+    background-color: #eef2f6;
+    border: solid 2px #e4e8ed;
+    padding: 33px 35px;
+    font-size: 50px;
+    cursor: pointer;
+    @include media($max: 767px) {
+      padding: 24px 26px;
+    }
+  }
+  &.network-card span.icon-upload-photo::before {
+    color: #cccccc;
+  }
+  .upload-photo {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 120px;
+    max-height: 100px;
+    padding: 0 10px;
+    > {
+      .form-group {
+        margin-bottom: 10px;
+      }
+      div.caption {
+        text-align: center;
+        margin-top: 0;
+        cursor: default;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #666666;
+        position: relative;
+        font-family: 'open_sanssemibold';
+        text-transform: uppercase;
+        margin: 0 -10px;
+      }
+    }
+    input[type="file"] {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+    img {
+      margin: 0;
+    }
+    > {
+      div.caption > p {
+        text-transform: initial;
+      }
+      .caption.global-error > p > span {
+        text-align: center !important;
+        margin: 0 -100px;
+      }
+    }
+    @include media($max: 767px) {
+      top: -75px;
+      > div {
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+.cropperClass {
+  background: rgba(0, 0, 0, 0.5);
+  > .modal-dialog {
+    max-width: 500px;
+    h4 {
+      font-size: 20px;
+      color: #2c2c2d;
+      text-transform: uppercase;
+    }
+  }
+}
+.avatar-photo {
+  border: 2px solid #e4e8ed;
+  min-width: 100px;
+  min-height: 100px;
+}
+.AvatarCropper-base input[type="range"]:focus {
+  border: 0 !important;
+}
+
+.upload-document {
+  .form-group {
+    padding: 37px 0;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    z-index: 9;
+    span {
+      vertical-align: middle;
+      vertical-align: -webkit-baseline-middle;
+      p {
+        padding: 0;
+      }
+    }
+  }
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #666666;
+    margin: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+  p {
+    font-size: 13px;
+    text-align: left;
+    color: #999999;
+    border-bottom: dotted 1px #999999;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+  img {
+    margin: 0;
+    display: inline-block;
+  }
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+    display: block !important;
+  }
+  div.supports {
+    font-size: 12px;
+    text-align: right;
+    color: #999999;
+    > a {
+      font-family: 'open_sanssemibold';
+      color: #666666;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  @include media($max: 991px) {
+    p {
+      font-size: 12px;
+      margin-bottom: 0;
+      padding: 0;
+      padding-bottom: 5px;
+    }
+  }
+  @include media($max: 767px) {
+    margin-bottom: 20px;
+  }
+}
+
+.dropzone {
+  height: auto;
+  border: 1px dotted #d4d9e2;
+  position: relative;
+  padding: 0;
+  min-height: 133px;
+  > div {
+    width: 100% !important;
+    height: auto !important;
+    border: 0 !important;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  aside {
+    padding: 20px 35px;
+    margin-bottom: 20px;
+    .file-wrapper {
+      overflow-y: auto;
+      max-height: 70px;
+      padding: 0 15px 0 0;
+      position: relative;
+      z-index: 12;
+    }
+    ul {
+      margin: 0;
+      color: #999999;
+      position: relative;
+    }
+    p.drag-drop {
+      font-size: 12px;
+      text-align: left;
+      color: #999999;
+      padding: 0;
+      margin-top: 0;
+      border-bottom: dashed 1px #979797;
+      display: inline-block;
+      position: relative;
+    }
+    .expand-hide-list {
+      .expand-list {
+        position: relative;
+        z-index: 14;
+        font-family: 'open_sanssemibold';
+        color: #666666;
+        text-decoration: underline;
+        cursor: pointer;
+        margin-right: 15px;
+      }
+      .hide-list {
+        position: relative;
+        z-index: 14;
+        font-family: 'open_sanssemibold';
+        color: #666666;
+        text-decoration: underline;
+        cursor: pointer;
+        margin-right: 15px;
+        margin-right: 15px;
+      }
+    }
+    p {
+      font-size: 11px;
+      padding: 0;
+      margin-top: 5px;
+      display: block;
+      border-bottom: 0;
+      color: #e53935;
+    }
+    @include media($max: 991px) {
+      padding: 20px 20px;
+      .expand-hide-list {
+        .expand-list, .hide-list {
+          font-size: 11px;
+          line-height: 22px;
+        }
+      }
+      p.drag-drop {
+        font-size: 11px;
+      }
+    }
+    @include media($max: 767px) {
+      padding: 20px 35px;
+    }
+  }
+
+  ul li {
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #666666;
+    > span.trunc {
+      max-width: 80%;
+      display: inline-block;
+      overflow: hidden;
+      max-height: 22px;
+      word-wrap: break-word;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      position: relative;
+      top: 4px;
+    }
+  }
+
+  .fa {
+    &.fa-stop {
+      padding: 0 5px 0 0;
+      font-size: 25px;
+      color: #d4d9e2;
+      vertical-align: baseline;
+    }
+    &.fa-file-text-o {
+      width: 20px;
+      height: 20px;
+      background-color: #3370b2;
+      color: #ffffff;
+      vertical-align: text-bottom;
+      text-align: center;
+      padding: 4px 0 0 0;
+      margin: 0 7px 0 0;
+    }
+    &.fa-trash-o {
+      cursor: pointer;
+      float: right;
+      font-size: 20px;
+      color: #999999;
+      padding-top: 1px;
+      position: relative;
+      top: 4px;
+      z-index: 12;
+    }
+  }
+  @include media($max: 991px) {
+    ul li > span.trunc {
+      max-width: 70%;
+    }
+  }
+  @include media($max: 767px) {
+    ul li > span.trunc {
+      max-width: 79%;
+    }
+  }
+}
+// dropzone scss ends here
+
+input {
+  &#linkedin-link, &#clio-link {
+    text-transform: inherit;
+  }
+}
+
+textarea.about-lawyer {
+  min-height: 168px;
+}
+
+.contact-us-card textarea {
+  resize: vertical;
+  overflow: auto;
+}
+/* --------- sign up network profile css above--------*/
+/* -----------------job card css below -------------- */
+
+.card.job-card {
+  position: relative;
+  text-align: left;
+  h5 {
+    margin: 30px 0;
+  }
+  .checkbox label {
+    font-size: 14px;
+    color: #666666;
+    text-transform: none;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-family: 'open_sansregular';
+    min-width: 200px;
+  }
+}
+
+.checkbox.pmd-default-theme {
+  margin: 20px 0;
+  .pmd-checkbox {
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
+.slider-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.pmd-textfield-focused {
+  background-color: transparent !important;
+}
+
+/* ----------------- thank-you card below -------------- */
+
+.thank-you-form {
+  margin-top: 19px;
+}
+.thank-you-card {
+  h4 {
+    font-size: 20px;
+    text-align: center;
+    color: #333333;
+    margin: 40px 0 20px;
+  }
+  p {
+    margin: 0;
+  }
+  .yellow-btn {
+    cursor: default;
+    padding: 0 15px;
+  }
+}
+.get-started-wrapper h3 {
+  margin: 15px 0 20px 0;
+}
+.get-started-card.card {
+  padding: 55px;
+  text-align: left;
+  h5 {
+    font-size: 18px;
+    color: #333333;
+    text-transform: unset;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    color: #666666;
+    margin: 0;
+    padding: 0;
+    @include media($max: 767px) {
+      // margin-top: 20px;
+    }
+    .click-here {
+      text-decoration: underline;
+      color: #3270b2;
+      cursor: pointer;
+    }
+  }
+  img {
+    margin: 0 0 23px;
+  }
+  .ceo {
+    font-size: 16px;
+    line-height: 1.43;
+    text-align: left;
+    color: #333333;
+    strong {
+      color: #666666;
+    }
+  }
+  .icon-msg-icon{
+    font-size: 60px;
+  }
+  .icon-contact-icon{
+    font-size: 60px;
+  }
+  .yellow-btn {
+    cursor: default;
+    padding: 0 15px;
+  }
+}
+
+/************************* responsive css begins below   Non-Mobile First Method  ************************/
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (max-width : 1199px) {
+
+    .card.practice-area-card .group-radio { padding:21px 15px 0; }
+    .card .group-radio { padding:0 15px 0; }
+    .get-started .right-div span{ margin: 0 25px; }
+
+  }
+
+  @media only screen and (max-width : 767px) {
+
+    .malpractice-insurance-card.card,
+    .experience-card.card,
+    .get-started-card.card{ padding: 20px; }
+    .upload-photo span[data-toggle="modal"]{  top: 15px !important; }
+    .practice-area-card.card .group-radio { padding: 0px 15px 0; }
+
+  }
+
+
+  /**************** Stripe Eelement ***************/
+
+  .stripe-form .StripeElement {
+    display: block;
+    margin: 10px 0 20px 0;
+    padding: 14px;
+    font-size: 1em;
+    height: 45px;
+    font-family: "Source Code Pro", monospace;
+    box-shadow: none;
+    border: solid 1px #d4d9e2;
+    outline: 0;
+    background: white;
+  }
+
+  .stripe-form .StripeElement iframe {
+    height: 24px !important;
+    margin-top: 7px !important;
+  }

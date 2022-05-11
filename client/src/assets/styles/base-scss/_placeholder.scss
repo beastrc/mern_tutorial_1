@@ -1,0 +1,18 @@
+/* Visually hide an element */
+/* When you hide an element with display: none, that prevents screen readers from reading it to the user. Sometimes that’s fine, but in other cases this will make the site hard to use for people with screen readers. */
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/*
+online tool to write scss -
+	https://www.sassmeister.com/
+
+*/

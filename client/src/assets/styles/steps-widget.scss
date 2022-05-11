@@ -1,0 +1,179 @@
+.steps-widget {
+  position: relative;
+  padding: 0px 0 40px;
+  .liner {
+    height: 2px;
+    background: #dddddd;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 34%;
+    z-index: 1;
+  }
+  .nav-tabs {
+    border: 0;
+    > li {
+      width: 20%;
+      font-size: 15px;
+      text-align: center;
+      color: $clr-tertiary;
+      > span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 16px auto 0;
+        width: 100%;
+        max-height: 30px;
+        word-break: break-word;
+      }
+      &.active > span:nth-of-type(2) {
+        border-bottom: 2px solid $clr-secondary;
+        width: 20%;
+        left: 40%;
+        bottom: -10px;
+      }
+      &:first-child {
+        > span {
+          padding: 0 0px;
+        }
+        &.active > span:nth-of-type(2) {
+          bottom: -25px;
+        }
+      }
+      &:last-child {
+        > span {
+          padding: 0 0px;
+        }
+        &.active > span:nth-of-type(2) {
+          bottom: -17px;
+        }
+      }
+      a {
+        @include prefix('border-radius', 50%);
+        width: 15px;
+        height: 15px;
+        margin: 35px auto;
+        padding: 0;
+        opacity: 1;
+      }
+    }
+  }
+  span.round-tabs {
+    @include prefix('border-radius', 50px);
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    display: inline-block;
+    background: $clr-primary;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+    border: 2px solid #e1e1e1;
+  }
+  li {
+    span.round-tabs::before {
+      /*content: " ";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: $clr-secondary;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;*/
+    }
+    &.active ~ li span.round-tabs::before {
+      /*display: none;*/
+    }
+  }
+
+  // navgiation-controller styles
+  .navigation-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.nav-tabs > li.active > a {
+  color: #555555;
+  cursor: default;
+  border: 0;
+  border-bottom-color: transparent;
+  &:hover,
+  &:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+  }
+}
+
+.steps-widget li {
+  &.fill {
+    span.round-tabs {
+      border-color: $clr-secondary;
+      cursor: pointer;
+    }
+    span.round-tabs::before {
+      @include prefix('border-radius', 50%);
+      content: ' ';
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: $clr-secondary;
+      left: 2px;
+      top: 2px;
+    }
+  }
+  &.active ~ li.fill span.round-tabs::before {
+    /*display: none;*/
+  }
+} /*-------------------------- responsive css begins below ------------------------------*/
+
+/*================================  Non-Mobile First Method  ======================*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1199px) {
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 991px) {
+  .steps-widget .nav-tabs > li {
+    font-size: 13px;
+  }
+
+  .steps-widget .nav-tabs ul > li:first-child > span {
+    padding: 0 0px;
+    max-height: 20px;
+  }
+  .steps-widget .nav-tabs ul > li:first-child.active > span:nth-of-type(2) {
+    bottom: -25px;
+  }
+}
+
+@media only screen and (max-width: 832px) {
+  .steps-widget .nav-tabs > li:nth-of-type(3) > span {
+    max-height: 20px;
+  }
+  .steps-widget .nav-tabs > li:nth-of-type(3).active > span:nth-of-type(2) {
+    bottom: -25px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 767px) {
+  .steps-widget {
+    display: none;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 479px) {
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+}
